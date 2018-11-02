@@ -1,11 +1,15 @@
+'''
+A palindromic number reads the same both ways. The largest palindrome made from the product of two 2 digit numbers is 9009 = 91 * 99.
+Find the largest palindrome made from the product of two 3 digit numbers.
+'''
 import sys
+import os
 
-def reverse_number(number):
-	number = str(number)
-	return int(number[::-1]) 
+dir_path = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(dir_path+'/util')
 
-def isNumberpallindrome(number):
-	return number == reverse_number(number)  
+
+import numbers_lib
 
 
 largest_pallindrome= 0
@@ -15,10 +19,10 @@ else:
 	digits = int(sys.argv[1])
 	low = 10**(digits-1)
 	high = (10**digits)-1
-	# cheap solution doesnt work for more than 3 digits (can do better)
+	# cheap brute force solution doesnt work for more than 3 digits (improve later)
 	for i in reversed(range(low,high)):
 		for j in reversed(range(low,high)):
-			if isNumberpallindrome(i*j):			
+			if numbers_lib.isNumberpallindrome(i*j):
 				largest_pallindrome= max(i*j,largest_pallindrome)
 
 	print(largest_pallindrome)	

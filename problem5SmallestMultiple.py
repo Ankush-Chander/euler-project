@@ -1,6 +1,14 @@
-import sys
+'''
+2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+'''
 
-sys.path.append('/home/ankush/projects/euler/util')
+import sys
+import os
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(dir_path+'/util')
+
 
 import numbers_lib
 
@@ -10,19 +18,3 @@ else:
 	high = int(sys.argv[1])
 	numbers = range(1,high)
 	print(numbers_lib.calculateLcm(numbers))
-# 	prime_array = [0]* (high + 1)
-#
-#
-# 	for j in range(1,high+1):
-# 		factors = numbers_lib.factorize_number(j)
-# 		freq = Counter(factors)
-# 		for item in freq:
-# 			prime_array[item] = max(freq[item],prime_array[item])
-#
-# 	# print(prime_array)
-#
-# lcm = 1
-# for i in range(0,high+1):
-# 	lcm = lcm * i**(prime_array[i])
-#
-# print(lcm)

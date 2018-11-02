@@ -4,10 +4,14 @@ from collections import Counter
 '''check if a number is prime
 	time complexity: n
 '''
+
+def is_multiple(divisor, dividend):
+	return (divisor%dividend == 0)
+
+
 def is_prime(number):
-	
 	for i in range(2,number/2+1):
-		if number % i ==0:
+		if is_multiple(number, i):
 			return False
 	return True
 
@@ -56,3 +60,20 @@ def calculateLcm(number_list):
 		lcm = lcm * i ** (prime_array[i])
 
 	return(lcm)
+
+
+def fibGenerator(max_number):
+	i=0
+	j=1
+	while j < max_number:
+		temp = i
+		i=j
+		j=temp+j
+		yield (j)
+
+def reverse_number(number):
+	number = str(number)
+	return int(number[::-1])
+
+def isNumberpallindrome(number):
+	return number == reverse_number(number)
