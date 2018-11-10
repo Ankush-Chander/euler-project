@@ -1,5 +1,6 @@
 '''Number based functions'''
 from collections import Counter
+import math as math
 
 '''check if a number is prime
 	time complexity: n
@@ -19,12 +20,28 @@ def is_prime(number):
 '''get prime numbers less than a given number
    time complexity: n^2 	
 '''
-def get_primes(number):	
+def get_primes(number):
 	i =1
 	while i < number:
 		if is_prime(i):
 			yield i
 		i = i +1	  
+
+'''
+get prime using sieve of eratosthenes
+'''
+def get_primes_less_than_n(n): # works fine for smaller values of n
+	x = [i for i in range(2,n+1)]
+	max_divisor = round(math.sqrt(n))
+	while len(x)>0:
+		current_prime = x[0]
+		yield current_prime
+		# eliminate all the multiples of prime under scanner
+		if x[0] < max_divisor:
+			y = [j for j in x if j%current_prime!=0 and j > current_prime]
+		else:
+			y = x[1:]
+		x = y
 
 
 def factorize_number(number):
