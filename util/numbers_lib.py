@@ -31,7 +31,9 @@ def get_primes(number):
 get prime using sieve of eratosthenes
 '''
 def get_primes_less_than_n(n): # works fine for smaller values of n
-	x = [i for i in range(2,n+1)]
+	yield 2
+
+	x = [i for i in range(3,n+1,2)]
 	max_divisor = round(math.sqrt(n))
 	while len(x)>0:
 		current_prime = x[0]
@@ -42,6 +44,7 @@ def get_primes_less_than_n(n): # works fine for smaller values of n
 		else:
 			y = x[1:]
 		x = y
+
 
 
 def factorize_number(number):
