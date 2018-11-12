@@ -25,7 +25,7 @@ def get_primes(number):
 	while i < number:
 		if is_prime(i):
 			yield i
-		i = i +1	  
+		i = i +1
 
 '''
 get prime using sieve of eratosthenes

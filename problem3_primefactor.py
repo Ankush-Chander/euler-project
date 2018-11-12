@@ -21,7 +21,7 @@ else:
 
 	result = 1
 	product = 1
-	for i in numbers_lib.get_primes(max/2 +1):		
+	for i in numbers_lib.get_primes(max/2 +1):
 		if max % i == 0:
 			result = i			
 			product = product*result
