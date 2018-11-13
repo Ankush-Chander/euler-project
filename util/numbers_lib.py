@@ -97,3 +97,11 @@ def reverse_number(number):
 
 def isNumberpallindrome(number):
 	return number == reverse_number(number)
+
+'''Product of each number in array'''
+def array_product(num_arr):
+	product = 1
+	while len(num_arr):
+		product = product*int(num_arr[0])
+		num_arr = num_arr[1:]
+	return product

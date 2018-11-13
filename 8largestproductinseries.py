@@ -10,14 +10,8 @@ import os
 # sys.path.append(dir_path+'/util')
 #
 #
-# import numbers_lib
+import numbers_lib
 
-def array_product(num_arr):
-	product = 1
-	while len(num_arr):
-		product = product*int(num_arr[0])
-		num_arr = num_arr[1:]
-	return product
 
 if len(sys.argv) !=2:
 	print("Usage: python "+sys.argv[0]+" number")
@@ -29,7 +23,7 @@ else:
 
 	while len(high)>= window_size:
 		current_arr = high[0:window_size]
-		current_product = array_product(current_arr)
+		current_product = numbers_lib.array_product(current_arr)
 		if(max_product < current_product ):
 			max_product = current_product
 		high = high[1:]
