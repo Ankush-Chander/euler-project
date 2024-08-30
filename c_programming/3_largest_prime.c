@@ -44,7 +44,7 @@ int main(int argc, char const *argv[])
         if(sieve[candidate_factor]=='1' &&num%candidate_factor==0){             
             max = num/candidate_factor;
             printf("%llu\n", candidate_factor);            
-    }
+    }}
     free(sieve);
     return 0;
 }
